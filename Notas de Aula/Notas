@@ -1,0 +1,10 @@
+./reciprocal 10
+
+-> argv[0] -> "./reciprocal"
+-> argv[1] -> "10"
+
+
+-> argv[1][0] -> caracter 0 do argv[1] -> "1"
+
+-> argv[2] -> seg fault -> vai bugar
+
