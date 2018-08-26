@@ -10,3 +10,8 @@
 
 
 ls -R |grep "\.doc$" ----> lista todos os arquivos do tipo .doc na pasta
+
+
+ls abc*   # list all files starting with abc---
+ls *abc*  # list all files containing --abc--
+ls *abc   # list all files ending with --abc
