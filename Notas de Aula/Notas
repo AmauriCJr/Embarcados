@@ -8,3 +8,5 @@
 
 -> argv[2] -> seg fault -> vai bugar
 
+
+ls -R |grep "\.doc$" ----> lista todos os arquivos do tipo .doc na pasta
