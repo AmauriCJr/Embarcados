@@ -8,6 +8,8 @@
 
 -> argv[2] -> seg fault -> vai bugar
 
+->argc --> numero de argumentos
+
 
 ls -R |grep "\.doc$" ----> lista todos os arquivos do tipo .doc na pasta
 
