@@ -16,6 +16,7 @@ ls abc*   # list all files starting with abc---
 ls *abc*  # list all files containing --abc--
 ls *abc   # list all files ending with --abc
 
+echo Ola mundo cruel! > ola.txt ------> cria um txt com o texto "Ola mundo cruel!" com o nome ola.txt
 
 
 pasta file_stdio
