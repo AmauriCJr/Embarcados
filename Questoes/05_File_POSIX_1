@@ -1,12 +1,12 @@
 1 - Considerando a biblioteca-padrão da linguagem C, responda:
 (a) Quais são as funções (e seus protótipos) para abrir e fechar arquivos?
-  FILE f, fopen("texto","w"), fclose(f).
+  fopen, fclose
 
 (b) Quais são as funções (e seus protótipos) para escrever em arquivos?
-  fprintf(f,"texto")
+  fprintf
 
 (c) Quais são as funções (e seus protótipos) para ler arquivos?
-  fopen("texto","r")
+  fscanf
 
 (d) Quais são as funções (e seus protótipos) para reposicionar um ponteiro para arquivo?
 
@@ -19,11 +19,16 @@
 3 - Considerando a norma POSIX, responda:
 
 (a) Quais são as funções (e seus protótipos) para abrir e fechar arquivos?
+  open, close
 
 (b) Quais são as funções (e seus protótipos) para escrever em arquivos?
+  write
 
 (c) Quais são as funções (e seus protótipos) para ler arquivos?
+  read
 
 (d) Quais são as funções (e seus protótipos) para reposicionar um ponteiro para arquivo?
+  lseek
 
 (e) Quais bibliotecas devem ser incluídas no código para poder utilizar as funções acima?
+  fcntl.h
