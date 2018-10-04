@@ -13,18 +13,28 @@
 3 - Quais são as vantagens e desvantagens em utilizar:
 
 (a) system()?
+    Permite executar comandos do terminal em um programa, podendo assim, automatizar processos através de um programa,
+  ao invés do usuário ter que digitar os comandos no terminal.
+    Podem ocorrer erros durante a execução dos comandos pois a função depende muito do sistema.
 
 (b) fork() e exec()?
+    A função fork() cria uma cópia de um processo e afunção exec() substitui o programa sendo executado 
+  no novo processo por um novo programa.
+  
 
 4 - É possível utilizar o exec() sem executar o fork() antes?
+    Sim, apesar de ser pouco comum, o exec() substituirá o progrma sendo executado no processo atual por um novo programa.
 
 5 - Quais são as características básicas das seguintes funções:
 
 (a) execp()?
+    Aceitam o nome do programa a ser chamado ao invés de todo o caminho até esse programa
 
 (b) execv()?
+    Aceitam q alista de argumentos do programa seja nula
 
 (c) exece()?
+    Aceitam argumentos adicionais do programa
 
 (d) execvp()?
 
