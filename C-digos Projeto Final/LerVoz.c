@@ -7,58 +7,51 @@
 #include <time.h>
 
 
-int LerVoz()
+const char * LerVoz()
 {
-	pid_t pid;
-	int x;
-	pid = fork();
-	x = getpid();
-	printf("inicio\n");
-	if(pid == 0)
-	{
-		printf("filho %d\n", x);
-		char line[81], character;                              
-		int c;                                                
-		c = 0;  
-		int a;
-		do                                                      
-		{       
-			a = system("sudo tail /var/log/syslog"); 
-			printf("%d",a);                                           
-			character = getchar();                            
-			line[c]   = character;  
-			if(c>10)
-				break;
-			c++;                                              
-		}while(character != '\n');                                
-		c = c - 1;                                              
-		line[c] = '\0'; 
-		printf("\n%s\n", line);                                         
-		exit(0);
-	}else
-	{
-	signal(SIGINT, SIG_IGN);
-	printf("pai %d\n", x);
+	FILE *f; 
+	int erro = 0;
+	char text[130], cmp[130];
+	static char  trat[8];
+		
+	f = fopen("/var/log/syslog","r");		//ABRE O SYSLOG
+	fseek(f, -130, SEEK_END);				//COLOCA O CURSOR DE LEITURA NO FINAL DO ARQUIVO E VOLTA 130 POSIÇÕES
+		
+	fgets(text, 130, f);					//COPIA OS 130 ULTIMOS CARACTERES
 	
-	sleep(5);
-	kill(0,SIGINT);
-	}
+	fclose(f);
+	if(strcmp(text,cmp) == 0)				//COMPARA PRA N EXCUTAR ORDENS REPETIDAS
+		return "semorde";
+		
+	strcpy(cmp,text);
+	strcpy(trat, &text[122]);				//PEGA SÓ A PARTE DA ORDEM DO STRING
 	
 	
+	if(strcmp(trat,"proximo") == 0)			//RETORNA APENAS A INFORMAÇÃO DESEJADA
+		return trat;
+	if(strcmp(trat,"comecaa") == 0)
+		return trat;
+	if(strcmp(trat,"repetee") == 0)
+		return trat;
+	if(strcmp(trat,"ler1234") == 0)
+		return trat;
+	if(strcmp(trat,"para123") == 0)
+		return trat;
+	else
+		return "semorde";					//IGNORA POSSIVEIS MENSAGENS NO SYSLOG
 
-	return 0;
 }
 
 
 int main()
 {
-	int i=0;
-	//while(i<2)
+	char ordem[8];
+	while(1)
 	{
-		LerVoz();
-		i++;
+		strcpy(ordem,LerVoz());				// GUARDA A ORDEM EM UM VETOR DENOTRO DA MAIN
+		printf("%s\n", ordem);
+		sleep(5);
 	}
-	
 	
 	return 0;
 }
