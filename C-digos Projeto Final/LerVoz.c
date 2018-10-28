@@ -29,7 +29,7 @@ const char * LerVoz()
 	
 	if(strcmp(trat,"proximo") == 0)			//RETORNA APENAS A INFORMAÇÃO DESEJADA
 		return trat;
-	if(strcmp(trat,"comecaa") == 0)
+	if(strcmp(trat,"voltaaa") == 0)
 		return trat;
 	if(strcmp(trat,"repetee") == 0)
 		return trat;
