@@ -20,25 +20,30 @@ flag = 0;
 const char * LerVoz()
 {
 	FILE *f; 
-	int erro = 0;
-	char text[130], cmp[130];
-	static char  trat[8];
-		
+	char text[130];
+	static char  trat[8], cmp[130];
+	
+	strcpy(text,"semorde");
+	strcpy(trat,"semorde");
+	
+	
 	f = fopen("/var/log/syslog","r");		//ABRE O SYSLOG
 	fseek(f, -130, SEEK_END);				//COLOCA O CURSOR DE LEITURA NO FINAL DO ARQUIVO E VOLTA 130 POSIÇÕES
 		
 	fgets(text, 130, f);					//COPIA OS 130 ULTIMOS CARACTERES
-	
+
 	fclose(f);
+
 	if(strcmp(text,cmp) == 0)				//COMPARA PRA N EXCUTAR ORDENS REPETIDAS
 		return "semorde";
 		
 	strcpy(cmp,text);
 	strcpy(trat, &text[122]);				//PEGA SÓ A PARTE DA ORDEM DO STRING
 	
+
 	
 	if(strcmp(trat,"proximo") == 0)			//RETORNA APENAS A INFORMAÇÃO DESEJADA
-		return trat;
+		return trat;	
 	if(strcmp(trat,"voltaaa") == 0)
 		return trat;
 	if(strcmp(trat,"repetee") == 0)
@@ -105,19 +110,17 @@ int main(void)
     			{
 					while(1)
 					{
-						printf("HAAAA\n");
 						strcpy(string,"semorde");
 						strcpy(string,LerVoz());				// GUARDA A ORDEM EM UM VETOR DENOTRO DA MAIN
-						printf("%s\n", string);
 						sleep(1);
 						if(strcmp(string, "proximo") == 0 || strcmp(string, "repetee") == 0 || strcmp(string, "ler1234") == 0 || strcmp(string, "para123") == 0 || strcmp(string, "voltaaa") == 0)
 						break;
 
 					}
 					
-				if(strcmp(string,"semorde") != 1)
+				if(strcmp(string,"semorde") != 0)
 				{
-					printf("TIRIRICA\n");
+					
 					
 					if(strcmp(string, "ler1234") == 0 || strcmp(string, "repetee") == 0 ){	
 						toca = toca;
@@ -147,7 +150,6 @@ int main(void)
     			if(flag == 1)
 					kill(0,SIGUSR2);
                 flag = 1;
-                printf("%s\n", string);
                 if(strcmp(string,"semorde") != 1)
 					write(fd[1], tocastring, (strlen(tocastring)+1));
 				
