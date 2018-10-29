@@ -63,7 +63,7 @@ int main(void)
 
         int     fd[2], nbytes;
         int   	pid;
-        char    string[20];
+        char    string[20], para[20];
         char    readbuffer[80];
         char	comando[12];
 
@@ -84,6 +84,9 @@ int main(void)
         		flagchild = 0;
                 close(fd[1]);
                 nbytes = read(fd[0], readbuffer, sizeof(readbuffer)); 
+                
+                if (strcmp(readbuffer,"90") == 0)
+					exit(0);
                 
                 strcpy(comando, "./fala ");
                 
@@ -112,6 +115,7 @@ int main(void)
 					{
 						strcpy(string,"semorde");
 						strcpy(string,LerVoz());				// GUARDA A ORDEM EM UM VETOR DENOTRO DA MAIN
+						strcpy(para, string);
 						sleep(1);
 						if(strcmp(string, "proximo") == 0 || strcmp(string, "repetee") == 0 || strcmp(string, "ler1234") == 0 || strcmp(string, "para123") == 0 || strcmp(string, "voltaaa") == 0)
 						break;
@@ -131,7 +135,7 @@ int main(void)
 						strcpy(string,"x");
 					}
 					if(strcmp(string, "para123") == 0){
-						exit(0);
+						toca = 90;
 						strcpy(string,"x");
 					}
 					if(strcmp(string, "voltaaa") == 0 )
@@ -153,7 +157,14 @@ int main(void)
                 if(strcmp(string,"semorde") != 1)
 					write(fd[1], tocastring, (strlen(tocastring)+1));
 				
+				
+				if(strcmp(para,"para123") == 0)
+				{
+					sleep(1);
+					exit(0);
+				}	
                 strcpy(string,"semorde");
+               
                 sleep(20);
       			}
 
