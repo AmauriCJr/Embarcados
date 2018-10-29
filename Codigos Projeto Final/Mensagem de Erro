@@ -1,0 +1,49 @@
+Oct 29 18:13:09 raspberrypi snips-hotword[741]: INFO:snips_hotword_hermes       : Hotword detected: site_id:default model:ler1234
+Oct 29 18:13:22 raspberrypi lightdm[455]: Error opening audit socket: Protocol not supported
+Oct 29 18:13:23 raspberrypi lightdm[1181]: Error getting user list from org.freedesktop.Accounts: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Accounts was not provided by any .service files
+Oct 29 18:13:23 raspberrypi systemd[1]: Created slice User Slice of lightdm.
+Oct 29 18:13:23 raspberrypi systemd[1]: Starting User Manager for UID 109...
+Oct 29 18:13:23 raspberrypi systemd[1]: Started Session c2 of user lightdm.
+Oct 29 18:13:23 raspberrypi systemd[1185]: Reached target Timers.
+Oct 29 18:13:23 raspberrypi systemd[1185]: Starting D-Bus User Message Bus Socket.
+Oct 29 18:13:23 raspberrypi systemd[1185]: Reached target Paths.
+Oct 29 18:13:23 raspberrypi systemd[1185]: Listening on GnuPG cryptographic agent (ssh-agent emulation).
+Oct 29 18:13:23 raspberrypi systemd[1185]: Listening on GnuPG cryptographic agent (access for web browsers).
+Oct 29 18:13:23 raspberrypi systemd[1185]: Listening on GnuPG cryptographic agent and passphrase cache (restricted).
+Oct 29 18:13:23 raspberrypi systemd[1185]: Listening on GnuPG network certificate management daemon.
+Oct 29 18:13:23 raspberrypi systemd[1185]: Listening on GnuPG cryptographic agent and passphrase cache.
+Oct 29 18:13:23 raspberrypi systemd[1185]: Listening on D-Bus User Message Bus Socket.
+Oct 29 18:13:23 raspberrypi systemd[1185]: Reached target Sockets.
+Oct 29 18:13:23 raspberrypi systemd[1185]: Reached target Basic System.
+Oct 29 18:13:23 raspberrypi systemd[1185]: Reached target Default.
+Oct 29 18:13:23 raspberrypi systemd[1185]: Startup finished in 95ms.
+Oct 29 18:13:23 raspberrypi systemd[1]: Started User Manager for UID 109.
+Oct 29 18:13:24 raspberrypi systemd[1185]: Started D-Bus User Message Bus.
+Oct 29 18:13:24 raspberrypi dbus-daemon[1196]: Activating via systemd: service name='org.gtk.vfs.Daemon' unit='gvfs-daemon.service'
+Oct 29 18:13:24 raspberrypi systemd[1185]: Starting Virtual filesystem service...
+Oct 29 18:13:24 raspberrypi dbus-daemon[1196]: Successfully activated service 'org.gtk.vfs.Daemon'
+Oct 29 18:13:24 raspberrypi systemd[1185]: Started Virtual filesystem service.
+Oct 29 18:13:31 raspberrypi lightdm[1210]: Error getting user list from org.freedesktop.Accounts: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Accounts was not provided by any .service files
+Oct 29 18:13:32 raspberrypi systemd[1]: Stopping User Manager for UID 109...
+Oct 29 18:13:32 raspberrypi systemd[1185]: Stopping Virtual filesystem service...
+Oct 29 18:13:32 raspberrypi systemd[1185]: Stopping D-Bus User Message Bus...
+Oct 29 18:13:32 raspberrypi systemd[1185]: Stopped target Default.
+Oct 29 18:13:32 raspberrypi systemd[1]: Started Session c3 of user pi.
+Oct 29 18:13:32 raspberrypi systemd[1185]: Stopped D-Bus User Message Bus.
+Oct 29 18:13:32 raspberrypi lightdm[455]: Error opening audit socket: Protocol not supported
+Oct 29 18:13:32 raspberrypi systemd[1185]: Stopped Virtual filesystem service.
+Oct 29 18:13:32 raspberrypi systemd[1185]: Stopped target Basic System.
+Oct 29 18:13:32 raspberrypi systemd[1185]: Stopped target Sockets.
+Oct 29 18:13:32 raspberrypi systemd[1185]: Closed GnuPG cryptographic agent and passphrase cache.
+Oct 29 18:13:32 raspberrypi systemd[1185]: Closed GnuPG cryptographic agent (access for web browsers).
+Oct 29 18:13:32 raspberrypi systemd[1185]: Closed GnuPG network certificate management daemon.
+Oct 29 18:13:32 raspberrypi systemd[1185]: Closed GnuPG cryptographic agent and passphrase cache (restricted).
+Oct 29 18:13:32 raspberrypi systemd[1185]: Closed D-Bus User Message Bus Socket.
+Oct 29 18:13:32 raspberrypi systemd[1185]: Closed GnuPG cryptographic agent (ssh-agent emulation).
+Oct 29 18:13:32 raspberrypi systemd[1185]: Reached target Shutdown.
+Oct 29 18:13:32 raspberrypi systemd[1185]: Starting Exit the Session...
+Oct 29 18:13:32 raspberrypi systemd[1185]: Stopped target Timers.
+Oct 29 18:13:32 raspberrypi systemd[1185]: Stopped target Paths.
+Oct 29 18:13:32 raspberrypi systemd[1185]: Received SIGRTMIN+24 from PID 1242 (kill).
+Oct 29 18:13:32 raspberrypi systemd[1]: Stopped User Manager for UID 109.
+Oct 29 18:13:32 raspberrypi systemd[1]: Removed slice User Slice of lightdm.
