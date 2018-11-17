@@ -1,0 +1,49 @@
+1-Cite as vantagens e desvantagens das comunicação serial:
+  (a) Assíncrona (UART).
+    Vantagens:
+      -Usa apenas dois fios
+      -Não necessita de um sinal de clock
+      -Possui bit de paridade para checagem de erros
+      -A estrutura de transmissão de dados pode mudar, desde que o transmissor e receptor saibam da mudança
+      -Muito documentado e largamente utilizado
+    Desvantagens:
+      -O tamanho máximo dos dados no pacote é de 9 bits
+      -Não suporta um sistema com vários mestres e vários escravos
+      -O baud rate deve permanecer próximo para o transmissor e receptor (dentro de 10% de diferença máxima)
+
+  (b) SPI.
+    Vantagens:
+      -não possui bits de começo ou fim, logo a informação pode ser transmitida ininterruptamente
+      -transmissão rápida de dados
+      -linhas MISO o MOSI separadas que permite a transmissão e recepcão de dados simultânea
+    Desvantagens:
+      -Uso de 4 fios
+      -Não possui um sistema de verificação de recebimento dos dados ou de checagem de erro na transmissão
+      -Só permite um único mestre
+
+2-Considere o caso em que a Raspberry Pi deve receber leituras analógico/digitais de um MSP430, e que a comunicação 
+  entre os dois é UART. É tecnicamente possível que o MSP430 mande os resultados da conversão A/D a qualquer hora, 
+  ou ele deve aguardar a Raspberry Pi fazer um pedido ao MSP430? Por quê?
+   
+    Não é necessário que a raspberry peça que os dados sejam transmitidos, durante a transmissão uart é mandado um bit que 
+    marca o início da transmissão dos dados, e isso é o suficiente para informar ao receptor que dados estão sendo transmitidos.
+
+3-Considere o caso em que a Raspberry Pi deve receber leituras analógico/digitais de um MSP430, que a comunicação 
+  entre os dois seja SPI, e que o MSP430 seja o escravo. É tecnicamente possível que o MSP430 mande os resultados
+  da conversão A/D a qualquer hora, ou ele deve aguardar a Raspberry Pi fazer um pedido ao MSP430? Por quê?
+
+  Para a comunicação SPI e necessário que primeiro o mestre (raspberry) peça os dados para o escravo (msp), para que esse transmita
+  os dados, esse pedido é feito através do fio SC/CS (Slave Select/Chip Select), que muda para nível lógico baixo para informar
+  para o escravo que o mestre está pronto para receber os dados.
+
+4-Se o Raspberry Pi tiver de se comunicar com dois dispositivos via UART, como executar a comunicação com o segundo dispositivo?
+
+  A transmissão de dados para vários escravos por UART pode ser feita multiplexando a transmissão, mandando bits alternados que são
+  separados por um multiplexador para o canal certo, esse multiplexador deve respeitar o baud rate, por isso o seu clock deve ser
+  em uma frequência perto do dobro do baud rate.
+
+5-Se o Raspberry Pi tiver de se comunicar com dois dispositivos via SPI, como executar a comunicação com o segundo dispositivo?
+
+  A comunicação SPI com mais de um escravo é feito através de daisy-chain, onde os dados são transmitidos em cascata de um escravo para
+  outro, porém o escravo só executa a ordem quando o SC/CS está em uma borda de suubida, assim é possível que o mestre selecione qual
+  escravo irá receber a ordem, se todos estiverem funcionando dentro do mesmo regime de clock.
