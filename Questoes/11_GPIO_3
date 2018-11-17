@@ -1,0 +1,16 @@
+1-Com relação às conexões GPIO do modelo de Raspberry Pi que você usará no projeto, responda:
+  (a) Quais pinos podem ser utilizados como entradas e saídas digitais comuns?
+  
+    Todos os 40 pinos da raspberry podem ser utilizados como pinos de entrada e saída digitais.
+
+  (b) Quais pinos possuem resistores de pull-up e pull-down?
+  
+    Os GPIO 2 e 3 possuem resistores de pull-up fixos, para os outros pinos é possível configurar resistores de pull-up e pull-down
+    através de software
+
+  (c) Quais formas de comunicação serial são suportados pelos pinos GPIO?
+  
+    Os pinos GPIO suportam comunicações serial do tipo: SPI , I2C e UART.
+
+2-Apresente outras 3 bibliotecas de acesso I/O em C para o Raspberry Pi.
+  wiringpi.h , pigpio.h , bcm2835.h
