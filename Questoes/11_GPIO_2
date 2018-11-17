@@ -1,0 +1,18 @@
+1-Defina qual modelo de Raspberry Pi você utilizará no projeto desta disciplina com o Raspberry Pi. Justifique sua escolha.
+
+  Raspberry pi 3B. O modelo foi escolhido pois consegue se conectar a uma rede wireless. O número de GPIOs também foi levado em consideração
+  para a escolha da placa, pois são necessários no mínimo 26 para o projeto.
+
+2-Defina qual sistema operacional você utilizará no projeto desta disciplina com o Raspberry Pi. Justifique sua escolha.
+  Será usado o raspbian, porque além de ser o mais utilizado, o que facilita encontrar soluções de problemas na internet, possui uma interface
+  gráfica, o que também será utilizado no projeto.
+
+3-Defina de qual forma você instalará o sistema operacional escolhido. Escreva o passo-a-passo da instalação e forneça os links necessários para isto.
+
+  Foi utiliado o guia de intalação contido no site oficial do raspberry (https://www.raspberrypi.org/downloads/noobs/),  colocou-se o 
+  instalador no cartão SD e realizou-se o boot da placa com o cartão SD, o resto da instalação foi realizado de forma automática.
+
+4-Defina de qual forma você desenvolverá software para o Raspberry Pi no projeto desta disciplina. Escreva o passo-a-passo do desenvolvimento e forneça os links necessários para isto.
+
+  O desenvolvimento de softwares está sendo realizado em C e utilizando a IDE Geany, contida no pacote de softwares do raspbian, estão
+  sendo utilizados diversos guias encontrados na internet para tirar dúvidas e auxiliar nesse processo.
